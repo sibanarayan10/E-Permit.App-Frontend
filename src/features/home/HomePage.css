@@ -1,0 +1,1197 @@
+/* ========================================
+   E-PTW HomePage Styles
+   Professional landing page for Bhilai Steel Plant
+   Color scheme: Indigo/Violet Premium Design
+======================================== */
+
+/* ===== Base Styles ===== */
+.steel-homepage {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    overflow-x: hidden;
+    background: #0f0f23;
+    min-height: 100vh;
+}
+
+/* ===== Header Styles ===== */
+.steel-header {
+    background: linear-gradient(135deg, rgba(15, 15, 35, 0.98) 0%, rgba(30, 27, 75, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 8px 0;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    object-fit: contain;
+    border: 2px solid rgba(251, 191, 36, 0.3);
+    background: rgba(255, 255, 255, 0.98);
+    padding: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(251, 191, 36, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-logo:hover {
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 40px rgba(251, 191, 36, 0.25);
+}
+
+.brand-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.brand-hindi {
+    font-size: 0.65rem;
+    color: #fbbf24;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+
+.brand-name {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.brand-sail {
+    font-size: 0.68rem;
+    color: #fbbf24;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+/* System Badge - Enhanced */
+.system-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.15) 0%, rgba(245, 158, 11, 0.08) 100%);
+    border: 1px solid rgba(251, 191, 36, 0.35);
+    border-radius: 12px;
+    padding: 8px 16px;
+    box-shadow: 0 4px 24px rgba(251, 191, 36, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.system-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(251, 191, 36, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-color: rgba(251, 191, 36, 0.5);
+}
+
+.badge-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1e293b;
+    box-shadow: 0 4px 20px rgba(251, 191, 36, 0.4);
+    flex-shrink: 0;
+}
+
+.badge-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.badge-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.01em;
+}
+
+.badge-subtitle {
+    font-size: 0.68rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+/* ===== Hero Section ===== */
+.steel-hero-section {
+    min-height: 100vh;
+    background: linear-gradient(145deg, #1a1a3e 0%, #2d1f5c 30%, #4a2c7a 60%, #6b21a8 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 60px;
+    overflow: hidden;
+}
+
+/* Animated gradient overlay */
+.steel-hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 20% 40%, rgba(99, 102, 241, 0.25) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 60%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 40% at 50% 20%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    animation: gradientPulse 10s ease-in-out infinite;
+}
+
+@keyframes gradientPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Decorative grid pattern */
+.steel-hero-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+}
+
+.hero-row {
+    min-height: calc(100vh - 180px);
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-text-wrapper {
+    max-width: 600px;
+}
+
+/* Premium Badge */
+.premium-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(245, 158, 11, 0.1) 100%);
+    border: 1px solid rgba(251, 191, 36, 0.4);
+    border-radius: 50px;
+    padding: 8px 18px;
+    margin-bottom: 24px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #fbbf24;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.badge-sparkle {
+    color: #fbbf24;
+    font-size: 14px;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
+.hero-title {
+    font-size: clamp(1.8rem, 4.5vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+}
+
+.text-highlight {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    position: relative;
+}
+
+.text-highlight::after {
+    content: 'e-PTW';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: blur(20px);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.92);
+    margin-bottom: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.hero-subtitle strong {
+    color: #fff;
+    font-weight: 700;
+}
+
+.hero-description {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.8;
+    margin-bottom: 32px;
+    max-width: 540px;
+}
+
+/* Stats Row */
+.stats-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.stat-value {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #fbbf24;
+    letter-spacing: -0.02em;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* Hero Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn-get-started {
+    padding: 16px 36px !important;
+    font-weight: 700 !important;
+    border-radius: 14px !important;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+    border: none !important;
+    color: #1e293b !important;
+    box-shadow: 0 8px 32px rgba(251, 191, 36, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    font-size: 1rem !important;
+}
+
+.btn-get-started:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(251, 191, 36, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.btn-icon {
+    font-size: 18px;
+}
+
+/* Hero Visual - Central Shield */
+.hero-visual-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-visual {
+    width: 100%;
+    max-width: 450px;
+    height: 450px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.central-shield {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shield-glow {
+    position: absolute;
+    inset: -30px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+.shield-icon-wrapper {
+    position: relative;
+    z-index: 3;
+    width: 130px;
+    height: 130px;
+    background: linear-gradient(145deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    box-shadow:
+        0 0 0 8px rgba(99, 102, 241, 0.2),
+        0 20px 60px rgba(99, 102, 241, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.2);
+    animation: floatShield 4s ease-in-out infinite;
+}
+
+@keyframes floatShield {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.shield-rings {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(139, 92, 246, 0.2);
+}
+
+.ring-1 {
+    width: 200px;
+    height: 200px;
+    animation: ringPulse 3s ease-out infinite;
+}
+
+.ring-2 {
+    width: 280px;
+    height: 280px;
+    animation: ringPulse 3s ease-out infinite 0.5s;
+}
+
+.ring-3 {
+    width: 360px;
+    height: 360px;
+    animation: ringPulse 3s ease-out infinite 1s;
+}
+
+@keyframes ringPulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Floating Icons */
+.floating-icons {
+    position: absolute;
+    inset: 0;
+}
+
+.float-icon {
+    position: absolute;
+    width: auto;
+    min-width: 70px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 14px 16px;
+    color: #fff;
+    font-size: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.float-icon span {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.9);
+    white-space: nowrap;
+}
+
+.float-1 {
+    top: 8%;
+    left: 8%;
+    animation: float1 5s ease-in-out infinite;
+}
+
+.float-2 {
+    top: 12%;
+    right: 12%;
+    animation: float2 6s ease-in-out infinite;
+}
+
+.float-3 {
+    bottom: 22%;
+    left: 3%;
+    animation: float3 5.5s ease-in-out infinite;
+}
+
+.float-4 {
+    bottom: 8%;
+    right: 8%;
+    animation: float4 4.5s ease-in-out infinite;
+}
+
+@keyframes float1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(10px, -15px) rotate(5deg);
+    }
+}
+
+@keyframes float2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-12px, 10px) rotate(-5deg);
+    }
+}
+
+@keyframes float3 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(15px, 8px) rotate(3deg);
+    }
+}
+
+@keyframes float4 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-8px, -12px) rotate(-3deg);
+    }
+}
+
+/* Developer Credit - Bottom Right */
+.developer-credit {
+    position: absolute;
+    bottom: 20px;
+    right: 24px;
+    z-index: 10;
+    text-align: right;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 10px 14px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.developer-credit .credit-line {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 2px 0;
+}
+
+.developer-credit .credit-line .heart {
+    color: #e91e63;
+    display: inline-block;
+    animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.15);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    75% {
+        transform: scale(1.15);
+    }
+}
+
+.developer-credit .credit-line strong {
+    color: #fbbf24;
+    font-weight: 700;
+}
+
+.developer-credit .credit-role {
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ===== Responsive Styles ===== */
+
+/* Large Tablets and Small Desktops */
+@media (max-width: 1199px) {
+    .hero-visual {
+        max-width: 400px;
+        height: 400px;
+    }
+
+    .shield-icon-wrapper {
+        width: 110px;
+        height: 110px;
+    }
+
+    .ring-1 {
+        width: 170px;
+        height: 170px;
+    }
+
+    .ring-2 {
+        width: 240px;
+        height: 240px;
+    }
+
+    .ring-3 {
+        width: 310px;
+        height: 310px;
+    }
+
+    .float-icon {
+        min-width: 60px;
+        padding: 10px 12px;
+        font-size: 20px;
+    }
+
+    .float-icon span {
+        font-size: 0.6rem;
+    }
+}
+
+/* Tablets (Portrait) */
+@media (max-width: 991px) {
+    .steel-header {
+        padding: 10px 0;
+    }
+
+    .header-content {
+        flex-wrap: nowrap;
+        gap: 12px;
+    }
+
+    .brand-logo {
+        width: 44px;
+        height: 44px;
+    }
+
+    .brand-name {
+        font-size: 0.98rem;
+    }
+
+    .brand-hindi {
+        font-size: 0.6rem;
+    }
+
+    .system-badge {
+        padding: 8px 14px;
+    }
+
+    .badge-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .badge-title {
+        font-size: 0.8rem;
+    }
+
+    .badge-subtitle {
+        font-size: 0.65rem;
+    }
+
+    .steel-hero-section {
+        padding: 120px 0 80px;
+        text-align: center;
+    }
+
+    .hero-row {
+        min-height: auto;
+    }
+
+    .hero-text-wrapper {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .hero-description {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .stats-row {
+        justify-content: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-visual-col {
+        margin-top: 50px;
+    }
+
+    .hero-visual {
+        max-width: 340px;
+        height: 340px;
+        margin: 0 auto;
+    }
+
+    .shield-icon-wrapper {
+        width: 90px;
+        height: 90px;
+    }
+
+    .shield-icon-wrapper svg {
+        width: 48px;
+        height: 48px;
+    }
+
+    .ring-1 {
+        width: 140px;
+        height: 140px;
+    }
+
+    .ring-2 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .ring-3 {
+        width: 260px;
+        height: 260px;
+    }
+
+    .developer-credit {
+        bottom: 16px;
+        right: 16px;
+        left: 16px;
+        text-align: center;
+    }
+}
+
+/* Small Tablets and Large Phones */
+@media (max-width: 768px) {
+    .steel-header {
+        padding: 8px 0;
+    }
+
+    .header-content {
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .header-brand {
+        gap: 10px;
+    }
+
+    .brand-logo {
+        width: 38px;
+        height: 38px;
+    }
+
+    .brand-name {
+        font-size: 0.85rem;
+    }
+
+    .brand-hindi {
+        display: none;
+    }
+
+    .brand-sail {
+        font-size: 0.65rem;
+    }
+
+    .system-badge {
+        padding: 6px 12px;
+    }
+
+    .badge-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .badge-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .badge-title {
+        font-size: 0.7rem;
+    }
+
+    .badge-subtitle {
+        display: none;
+    }
+
+    .steel-hero-section {
+        padding: 100px 0 100px;
+    }
+
+    .premium-badge {
+        font-size: 0.7rem;
+        padding: 6px 14px;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        margin-bottom: 28px;
+    }
+
+    .stats-row {
+        gap: 16px;
+    }
+
+    .stat-value {
+        font-size: 1.15rem;
+    }
+
+    .stat-label {
+        font-size: 0.68rem;
+    }
+
+    .hero-visual {
+        max-width: 280px;
+        height: 280px;
+    }
+
+    .shield-icon-wrapper {
+        width: 75px;
+        height: 75px;
+    }
+
+    .shield-icon-wrapper svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .ring-1 {
+        width: 120px;
+        height: 120px;
+    }
+
+    .ring-2 {
+        width: 170px;
+        height: 170px;
+    }
+
+    .ring-3 {
+        width: 220px;
+        height: 220px;
+    }
+
+    .float-icon {
+        min-width: 55px;
+        padding: 8px 10px;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .float-icon span {
+        font-size: 0.55rem;
+    }
+
+    .developer-credit {
+        padding: 12px 16px;
+    }
+
+    .developer-credit .credit-line {
+        font-size: 0.85rem;
+    }
+
+    .developer-credit .credit-role {
+        font-size: 0.7rem;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 576px) {
+    .steel-header {
+        padding: 6px 0;
+    }
+
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 6px;
+    }
+
+    .header-brand {
+        gap: 8px;
+    }
+
+    .brand-logo {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+    }
+
+    .brand-name {
+        font-size: 0.8rem;
+    }
+
+    .brand-sail {
+        font-size: 0.6rem;
+    }
+
+    .system-badge {
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+
+    .badge-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 6px;
+    }
+
+    .badge-title {
+        font-size: 0.65rem;
+    }
+
+    .steel-hero-section {
+        padding: 90px 0 90px;
+    }
+
+    .premium-badge {
+        font-size: 0.65rem;
+        padding: 5px 12px;
+        margin-bottom: 18px;
+    }
+
+    .hero-title {
+        font-size: 1.9rem;
+        margin-bottom: 14px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.92rem;
+        margin-bottom: 12px;
+    }
+
+    .hero-description {
+        font-size: 0.88rem;
+        line-height: 1.7;
+        margin-bottom: 24px;
+    }
+
+    .stats-row {
+        gap: 12px;
+        margin-bottom: 28px;
+    }
+
+    .stat-value {
+        font-size: 1rem;
+    }
+
+    .stat-label {
+        font-size: 0.6rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .btn-get-started {
+        width: 100%;
+        padding: 14px 24px !important;
+        font-size: 14px !important;
+        justify-content: center !important;
+    }
+
+    .hero-visual-col {
+        margin-top: 36px;
+    }
+
+    .hero-visual {
+        max-width: 220px;
+        height: 220px;
+    }
+
+    .shield-icon-wrapper {
+        width: 60px;
+        height: 60px;
+        border-radius: 18px;
+    }
+
+    .shield-icon-wrapper svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .ring-1 {
+        width: 100px;
+        height: 100px;
+    }
+
+    .ring-2 {
+        width: 140px;
+        height: 140px;
+    }
+
+    .ring-3 {
+        width: 180px;
+        height: 180px;
+    }
+
+    .float-icon {
+        min-width: 42px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .float-icon span {
+        display: none;
+    }
+
+    .developer-credit {
+        bottom: 12px;
+        right: 12px;
+        left: 12px;
+        padding: 10px 14px;
+        border-radius: 10px;
+    }
+
+    .developer-credit .credit-line {
+        font-size: 0.8rem;
+    }
+
+    .developer-credit .credit-role {
+        font-size: 0.65rem;
+    }
+}
+
+/* Small Mobile Phones */
+@media (max-width: 400px) {
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 4px;
+    }
+
+    .brand-logo {
+        width: 28px;
+        height: 28px;
+    }
+
+    .brand-name {
+        font-size: 0.75rem;
+    }
+
+    .system-badge {
+        padding: 4px 8px;
+    }
+
+    .badge-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .badge-title {
+        font-size: 0.6rem;
+    }
+
+    .steel-hero-section {
+        padding: 85px 0 85px;
+    }
+
+    .premium-badge {
+        font-size: 0.58rem;
+    }
+
+    .hero-title {
+        font-size: 1.65rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .hero-description {
+        font-size: 0.82rem;
+    }
+
+    .hero-visual {
+        max-width: 180px;
+        height: 180px;
+    }
+
+    .shield-icon-wrapper {
+        width: 50px;
+        height: 50px;
+    }
+
+    .shield-icon-wrapper svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .ring-1 {
+        width: 80px;
+        height: 80px;
+    }
+
+    .ring-2 {
+        width: 120px;
+        height: 120px;
+    }
+
+    .ring-3 {
+        width: 160px;
+        height: 160px;
+    }
+
+    .float-icon {
+        min-width: 36px;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .float-icon span {
+        display: none;
+    }
+
+    .developer-credit .credit-line {
+        font-size: 0.75rem;
+    }
+
+    .developer-credit .credit-role {
+        font-size: 0.6rem;
+    }
+}
