@@ -15,7 +15,7 @@ import {
     Checkbox,
     Spinner,
 } from '@fluentui/react-components';
-import { Mail24Regular, LockClosed24Regular, Eye24Regular, Copy24Regular } from '@fluentui/react-icons';
+import { Mail24Regular, LockClosed24Regular, Eye24Regular} from '@fluentui/react-icons';
 import { useUser } from '@/context';
 import { loginUser } from '@/services';
 import toast from 'react-hot-toast';
