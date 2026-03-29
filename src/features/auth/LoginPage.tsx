@@ -15,7 +15,7 @@ import {
     Checkbox,
     Spinner,
 } from '@fluentui/react-components';
-import { Mail24Regular, LockClosed24Regular } from '@fluentui/react-icons';
+import { Mail24Regular, LockClosed24Regular, Eye24Regular, Copy24Regular } from '@fluentui/react-icons';
 import { useUser } from '@/context';
 import { loginUser } from '@/services';
 import toast from 'react-hot-toast';
@@ -72,8 +72,78 @@ const useStyles = makeStyles({
     subtitle: {
         textAlign: 'center',
         color: tokens.colorNeutralForeground3,
-        marginBottom: tokens.spacingVerticalXL,
+        marginBottom: tokens.spacingVerticalM,
     },
+
+    /* ── Demo Credentials Banner ── */
+    demoBanner: {
+        marginBottom: tokens.spacingVerticalM,
+        borderRadius: tokens.borderRadiusMedium,
+        border: '1.5px dashed #818cf8',
+        background: 'linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%)',
+        padding: '10px 14px',
+        cursor: 'pointer',
+        transition: 'box-shadow 0.18s ease, transform 0.18s ease',
+        ':hover': {
+            boxShadow: '0 4px 16px rgba(99, 102, 241, 0.18)',
+            transform: 'translateY(-1px)',
+        },
+        ':active': {
+            transform: 'translateY(0)',
+        },
+    },
+    demoBannerHeader: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginBottom: '6px',
+    },
+    demoBadge: {
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '5px',
+        background: 'linear-gradient(135deg, #6366f1 0%, #818cf8 100%)',
+        color: '#fff',
+        fontSize: '10px',
+        fontWeight: 700,
+        letterSpacing: '0.06em',
+        textTransform: 'uppercase',
+        padding: '2px 8px',
+        borderRadius: '20px',
+    },
+    demoHint: {
+        fontSize: '10px',
+        color: '#6366f1',
+        fontWeight: 600,
+        display: 'flex',
+        alignItems: 'center',
+        gap: '3px',
+    },
+    demoRow: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginTop: '2px',
+    },
+    demoLabel: {
+        fontSize: '10px',
+        color: '#6b7280',
+        fontWeight: 600,
+        textTransform: 'uppercase',
+        letterSpacing: '0.05em',
+        minWidth: '62px',
+    },
+    demoValue: {
+        fontSize: '12px',
+        color: '#3730a3',
+        fontWeight: 700,
+        fontFamily: 'monospace',
+        background: 'rgba(99, 102, 241, 0.08)',
+        padding: '1px 7px',
+        borderRadius: '4px',
+        letterSpacing: '0.02em',
+    },
+
     form: {
         display: 'flex',
         flexDirection: 'column',
@@ -113,6 +183,9 @@ const useStyles = makeStyles({
     },
 });
 
+const DEMO_EMAIL = 'demo01@gmail.com';
+const DEMO_PASSWORD = 'demo123';
+
 const Login: React.FC = () => {
     const styles = useStyles();
     const [email, setEmail] = useState('');
@@ -121,6 +194,13 @@ const Login: React.FC = () => {
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
     const { setUserData } = useUser();
+
+    /** Fill form fields with demo credentials on banner click */
+    const handleDemoFill = () => {
+        setEmail(DEMO_EMAIL);
+        setPassword(DEMO_PASSWORD);
+        toast.success('Demo credentials filled!', { icon: '🎉', duration: 2000 });
+    };
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -161,6 +241,35 @@ const Login: React.FC = () => {
 
                 <Text as="h2" className={styles.title}>Welcome Back</Text>
                 <Text className={styles.subtitle}>Sign in to your e-PTW account</Text>
+
+                {/* ── Demo Credentials Banner ── */}
+                <div
+                    className={styles.demoBanner}
+                    onClick={handleDemoFill}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => e.key === 'Enter' && handleDemoFill()}
+                    title="Click to auto-fill demo credentials"
+                >
+                    <div className={styles.demoBannerHeader}>
+                        <span className={styles.demoBadge}>
+                            🎯 &nbsp;Demo Access
+                        </span>
+                        <span className={styles.demoHint}>
+                            <Eye24Regular style={{ width: 12, height: 12 }} />
+                            Click to auto-fill
+                        </span>
+                    </div>
+
+                    <div className={styles.demoRow}>
+                        <span className={styles.demoLabel}>Email</span>
+                        <span className={styles.demoValue}>{DEMO_EMAIL}</span>
+                    </div>
+                    <div className={styles.demoRow}>
+                        <span className={styles.demoLabel}>Password</span>
+                        <span className={styles.demoValue}>{DEMO_PASSWORD}</span>
+                    </div>
+                </div>
 
                 <form onSubmit={handleSubmit} className={styles.form}>
                     <div className={styles.field}>
